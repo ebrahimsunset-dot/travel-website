@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>what is travel</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+	<!-- ________MY WELLCOME MESSAGE POP up-_____________________________________________ -->
+	<div id="welcomePopup" style="display:flex; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; z-index:9999;">
+		<div style="background:#fff; padding:30px 40px; border-radius:8px; text-align:center; max-width:400px;">
+			<h2 style="margin-top:0;">Welcome to our website!</h2>
+			<p>We're glad you're here. Explore and enjoy your visit.</p>
+			<button onclick="document.getElementById('welcomePopup').style.display='none'" style="padding:10px 20px; background-color:#333; color:#fff; border:none; border-radius:4px; cursor:pointer;">
+				Close
+			</button>
+		</div>
+	</div>
+
+	<div id="header">
+		<div>
+			<h1><a href="index.html">What is Travel</a></h1>
+			<h2>&quot; This website template has been designed from a tamplate. &quot;</h2>
+
+			<a href="https://freewebsitetemplates.com/preview/personalwebsitetemplate/" style="display:inline-block; padding:10px 20px; background-color:#333; color:#fff; text-decoration:none; border-radius:4px; margin-top:10px;">
+				Click here to see the website template I use
+			</a>
+
+		</div>
+		<div>
+			<span></span>
+			<div>
+				<ul>
+					<li class="current">
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="about.html">About</a>
+					</li>
+
+					<li>
+						<a href="gallery.html">Gallery</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- ________new js code -_____________________________________________ -->
+	<div id="body">
+		<div>
+			<div>
+				<h2>Go..go>></h2>
+			<div style="background-color: #eef5e9; padding: 20px; border-radius: 8px; border: 1px solid #c8ddc0;">
+	<p style="font-weight: bold; font-size: 22px;">Looking for a destination to travel near you? Type a country name below to search.</p>
+	<input type="text" id="massageSearchInput" placeholder="Enter a Country name..." style="font-size: 18px; padding: 10px; width: 60%; border: 1px solid #aaa; border-radius: 5px;"
+	<input type="button" value="Search" onclick="searchMassage()" style="font-size: 18px; padding: 10px 20px; border-radius: 5px; background-color: #6da96d; color: white; border: none; cursor: pointer;">
+	<div id="massageSearchResults"></div>
+</div>
+</div>
+
+
+
+			<div>
+				<h2>Featured</h2>
+				<div>
+					<img class="figure" src="images/homepageimage.jpg" alt="Description of photo" width="760" height="355">
+					<p>
+						<span style="color: #ff1744; font-family: 'Lobster', cursive; font-size: 18px;">Stories Behind Photos</span>
+						What is Travel? Travel is much more than moving from one place to another. It is an opportunity to explore the world, experience different cultures, meet new people, and learn from new environments. Every journey offers something unique, whether it is a beautiful landscape, a historic landmark, a local tradition, or a simple moment that becomes a lasting memory. Traveling helps us understand the diversity of the world and appreciate the beauty that exists in different places.
+						<br><br>
+						Photography plays an important role in preserving these experiences. While a photo captures a single moment in time, it also represents the emotions, memories, and experiences connected to that moment. Every photograph has a story behind it—a place that was explored, a person who was met, a challenge that was overcome, or a memory that remains special. Looking at a photo allows us to remember not only what we saw, but also how we felt during that journey.
+						<br><br>
+						This website is dedicated to sharing my travel experiences through the places I have visited and the photographs I have taken. Each destination featured here has its own unique character and story, and every photo reflects a meaningful part of my journey. My goal is to document these experiences, preserve the memories, and share the beauty of different places with others. I hope this collection of photos and stories inspires visitors to appreciate the value of travel, discover new destinations, and create meaningful memories of their own.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		
+					
+					
+	<div id="footer">
+		<footer>
+  <p class="myidname">HOSSAIN MD EBRAHIM &nbsp; | &nbsp; ID: 155 / 25319019</p>
+</footer>
+</div>
+
+
+			<script>
+	var countries = [
+	{ country: "Japan", places: "Tokyo, Kyoto, Mount Fuji, Osaka" },
+	{ country: "France", places: "Paris, Eiffel Tower, Nice, Mont Saint-Michel" },
+	{ country: "Italy", places: "Rome, Venice, Florence, Amalfi Coast" },
+	{ country: "USA", places: "New York, Grand Canyon, Los Angeles, Miami" },
+	{ country: "Thailand", places: "Bangkok, Phuket, Chiang Mai, Krabi" },
+	{ country: "UAE", places: "Dubai, Burj Khalifa, Abu Dhabi" },
+	{ country: "UK", places: "London, Edinburgh, Stonehenge" },
+	{ country: "Turkey", places: "Istanbul, Cappadocia, Pamukkale" },
+	{ country: "Indonesia", places: "Bali, Jakarta, Komodo Island" },
+	{ country: "Bangladesh", places: "Cox's Bazar, Sundarbans, Sylhet, Dhaka" },
+	{ country: "India", places: "Taj Mahal, Jaipur, Goa, Kerala" },
+	{ country: "China", places: "Great Wall, Beijing, Shanghai, Zhangjiajie" },
+	{ country: "South Korea", places: "Seoul, Busan, Jeju Island" },
+	{ country: "Malaysia", places: "Kuala Lumpur, Langkawi, Penang" },
+	{ country: "Singapore", places: "Marina Bay, Gardens by the Bay, Sentosa" },
+	{ country: "Vietnam", places: "Ha Long Bay, Hanoi, Hoi An" },
+	{ country: "Spain", places: "Barcelona, Madrid, Seville, Ibiza" },
+	{ country: "Germany", places: "Berlin, Munich, Neuschwanstein Castle" },
+	{ country: "Switzerland", places: "Zurich, Interlaken, Matterhorn, Lucerne" },
+	{ country: "Netherlands", places: "Amsterdam, Keukenhof Gardens, Rotterdam" },
+	{ country: "Greece", places: "Santorini, Athens, Mykonos" },
+	{ country: "Portugal", places: "Lisbon, Porto, Algarve" },
+	{ country: "Egypt", places: "Pyramids of Giza, Cairo, Luxor, Red Sea" },
+	{ country: "Morocco", places: "Marrakech, Casablanca, Sahara Desert" },
+	{ country: "South Africa", places: "Cape Town, Kruger Park, Table Mountain" },
+	{ country: "Kenya", places: "Maasai Mara, Nairobi, Mombasa" },
+	{ country: "Australia", places: "Sydney, Great Barrier Reef, Melbourne" },
+	{ country: "New Zealand", places: "Queenstown, Auckland, Milford Sound" },
+	{ country: "Canada", places: "Banff, Niagara Falls, Toronto, Vancouver" },
+	{ country: "Mexico", places: "Cancun, Mexico City, Chichen Itza" },
+	{ country: "Brazil", places: "Rio de Janeiro, Iguazu Falls, Sao Paulo" },
+	{ country: "Argentina", places: "Buenos Aires, Patagonia, Iguazu Falls" },
+	{ country: "Peru", places: "Machu Picchu, Cusco, Lima" },
+	{ country: "Maldives", places: "Male, Overwater Resorts, Coral Reefs" },
+	{ country: "Sri Lanka", places: "Colombo, Sigiriya, Ella, Galle" },
+	{ country: "Nepal", places: "Kathmandu, Pokhara, Mount Everest" },
+	{ country: "Saudi Arabia", places: "Mecca, Medina, Riyadh, AlUla" },
+	{ country: "Qatar", places: "Doha, Museum of Islamic Art, The Pearl" },
+	{ country: "Russia", places: "Moscow, Saint Petersburg, Lake Baikal" },
+	{ country: "Iceland", places: "Reykjavik, Blue Lagoon, Golden Circle" }
+];
+
+
+	function searchMassage() {
+		var query = document.getElementById("massageSearchInput").value.trim().toLowerCase();
+		var resultsDiv = document.getElementById("massageSearchResults");
+		resultsDiv.innerHTML = "";
+
+		if (!query) {
+			resultsDiv.innerHTML = "<p>Please enter a country name.</p>";
+			return;
+		}
+
+		var matches = countries.filter(function (item) {
+			return item.country.toLowerCase().indexOf(query) !== -1;
+		});
+
+		if (matches.length === 0) {
+			resultsDiv.innerHTML = "<p>No travel places found for &quot;" + query + "&quot;.</p>";
+			return;
+		}
+
+		var list = "<ul>";
+		matches.forEach(function (item) {
+			list += "<li><strong>" + item.country + "</strong> — Popular places: " + item.places + "</li>";
+		});
+		list += "</ul>";
+		resultsDiv.innerHTML = list;
+	}
+</script>
+
+</body>
+</html>
+
+				
